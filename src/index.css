@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.home{
+  background-image: url("./assets/images/image2.jpeg");
+  background-color: rgba(0,0,0,0.5);
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+}
