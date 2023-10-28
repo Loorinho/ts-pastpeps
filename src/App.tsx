@@ -4,12 +4,15 @@ import Layout from "./features/layout/Layout"
 import Home from "./features/home/Home"
 import Login from "./features/login/Login"
 import UploadPaper from "./features/upload-paper/UploadPaper"
+import Register from "./features/registration/Register"
 
 function App() {
  
   return (
    <Routes>
     <Route path="/" element={<Login />} />
+    <Route path="/register" element={<Register />} />
+
     <Route element={<Layout />}>
       <Route path="/home" element={<Home />} />
       <Route path="/upload" element={<UploadPaper />} />
