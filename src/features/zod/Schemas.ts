@@ -15,8 +15,8 @@ export type LoginSchemaType = z.infer<typeof LoginSchema>;
 export const RegistrationSchema = z.object({
   name: z.string().min(1, "Your full name is required"),
   username: z.string().min(1, "Your username is required"),
-  registrationNumber: z.string().min(1, "Your registration name is required").optional(),
-  university: z.string().optional(),
+  registrationNumber: z.string().min(1, "Registration name is required").optional(),
+  university: z.string().min(1, "University is required"),
 //   email: z.string().min(1, "Your university email address is required")
 //           .email()
 //           .refine(value => value.endsWith("@cit.mak.ac.ug") || value.endsWith("@mak.ac.ug"), {

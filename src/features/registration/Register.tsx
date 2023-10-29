@@ -6,11 +6,7 @@ import { Link } from 'react-router-dom';
 
 function Register(){
 
-    const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<RegistrationSchemaType>({
+    const { register, handleSubmit, formState: { errors, isSubmitting }} = useForm<RegistrationSchemaType>({
     resolver: zodResolver(RegistrationSchema),
   });
 
@@ -18,18 +14,19 @@ function Register(){
     console.log("Data: ", data);
 
     
-  };
+   };
+  
   return (
 
     <section className="h-[100dvh] flex justify-center items-center " >  
-    <form onSubmit={handleSubmit(Register)} className='min-h-[300px] pt-10 pb-3 rounded-lg ring-1 ring-[#007791] w-[400px] px-2 '>
+    <form onSubmit={handleSubmit(Register)} className='min-h-[300px] pt-10 pb-3 rounded-lg ring-1 ring-[#007791] w-[450px] px-2 '>
       {/* <div className="grid grid-cols-12 gap-2"> */}
 
       <p className='text-center font-medium text-2xl mb-2'>Past<span className='text-[#007791]'>PEPS</span></p>
 
       <p className='text-center text-xl'>Create an account</p>
 
-       <div className="">
+       <div className="mt-2">
         <label htmlFor="" className="block text-gray-500 text-sm">
           Name
         </label>
@@ -47,7 +44,7 @@ function Register(){
           <span className="text-red-500 mb-2">{`${errors.name.message}`}</span>
         )}
       </div>
-      <div className="">
+      <div className="mt-2">
         <label htmlFor="" className="block text-gray-500 text-sm">
           Email
         </label>
@@ -64,6 +61,46 @@ function Register(){
         {errors.username && (
           <span className="text-red-500 mb-2">{`${errors.username.message}`}</span>
         )}
+        </div>
+      <div className="grid grid-cols-12 gap-2">
+          <div className="col-span-6">
+              <label htmlFor="" className="block text-gray-500 text-sm">
+                University
+              </label>
+              <input
+                type="text"
+                {...register("university")}
+                placeholder="Enter your university email address"
+                className={`border-2 rounded-md px-2 py-1 outline-none w-full focus:ring-1 ${
+                  errors.university?.message
+                    ? "border-red-500 focus:ring-red-700"
+                    : " focus:ring-blue-700 "
+                } `}
+              />
+              {errors.university && (
+                <span className="text-red-500 mb-2">{`${errors.university.message}`}</span>
+              )}
+          </div>
+          
+           <div className="col-span-6">
+              <label htmlFor="" className="block text-gray-500 text-sm">
+                Registration Number
+              </label>
+              <input
+                type="text"
+                {...register("registrationNumber")}
+                placeholder="Enter your university email address"
+                className={`border-2 rounded-md px-2 py-1 outline-none w-full focus:ring-1 ${
+                  errors.registrationNumber?.message
+                    ? "border-red-500 focus:ring-red-700"
+                    : " focus:ring-blue-700 "
+                } `}
+              />
+              {errors.registrationNumber && (
+                <span className="text-red-500 mb-2">{`${errors.registrationNumber.message}`}</span>
+              )}
+          </div>
+
       </div>
       <div className="mt-2 relative">
         <label htmlFor="" className="block text-gray-500 text-sm">
