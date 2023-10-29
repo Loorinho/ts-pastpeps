@@ -22,7 +22,7 @@ function Register(){
   return (
 
     <section className="h-[100dvh] flex justify-center items-center " >  
-    <form onSubmit={handleSubmit(Register)} className='min-h-[300px] py-10 rounded-lg ring-1 ring-[#007791] w-[400px] px-2 '>
+    <form onSubmit={handleSubmit(Register)} className='min-h-[300px] pt-10 pb-3 rounded-lg ring-1 ring-[#007791] w-[400px] px-2 '>
       {/* <div className="grid grid-cols-12 gap-2"> */}
 
       <p className='text-center font-medium text-2xl mb-2'>Past<span className='text-[#007791]'>PEPS</span></p>

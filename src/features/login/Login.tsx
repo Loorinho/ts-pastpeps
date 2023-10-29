@@ -22,10 +22,12 @@ function Login(){
   return (
 
     <section className="h-[100dvh] flex justify-center items-center " >  
-    <form onSubmit={handleSubmit(handleLogin)} className='min-h-[300px] py-10 rounded-lg ring-1 ring-[#007791] w-[370px] px-2 '>
+    <form onSubmit={handleSubmit(handleLogin)} className='min-h-[300px] pt-7 pb-4 rounded-lg ring-1 ring-[#007791] w-[370px] px-2 '>
       {/* <div className="grid grid-cols-12 gap-2"> */}
 
       <p className='text-center font-medium text-2xl mb-2'>Past<span className='text-[#007791]'>PEPS</span></p>
+
+      <p className="my-3 text-xl text-center">Login to your account</p>
       <div className="">
         <label htmlFor="" className="block text-gray-500 text-sm">
           Email
