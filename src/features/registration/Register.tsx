@@ -10,11 +10,11 @@ function Register(){
     resolver: zodResolver(RegistrationSchema),
   });
 
-   const Register = async (data: RegistrationSchemaType) => {
+  const Register = async (data: RegistrationSchemaType) => {
     console.log("Data: ", data);
 
     
-   };
+  };
   
   return (
 
