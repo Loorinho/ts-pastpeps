@@ -6,6 +6,7 @@ import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 import { useResizeDetector } from "react-resize-detector";
 import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -31,9 +32,11 @@ export default function ViewPdf() {
         <div className="options w-full border-b border-zinc-200 flex items-center justify-between px-4 py-5">
            <div className="flex items-center gap-2.5">
               <div>
-                 <button className="bg-[#007791] text-white rounded px-3 py-2"
-                  onClick={() => setPageNumber((prev) => prev-1)}
-                 >Prev</button>
+                 <button className="hover:bg-[#007791] hover:text-white rounded px-3 py-2 duration-200"
+                    
+                    disabled={pageNumber<=1}
+                  onClick={() => setPageNumber((prev) => prev-1 > 1 ? prev -1 : 1)}
+                 ><ChevronDown /></button>
               </div>
               
               <div className="flex items-center gap-1.5">
@@ -46,9 +49,11 @@ export default function ViewPdf() {
               </div>
 
               <div>
-                 <button className="bg-[#007791] text-white rounded px-3 py-2"
-                 onClick={() => setPageNumber((prev) => prev +1)}
-                 >Next</button>
+                 <button className="hover:bg-[#007791] 
+                 hover:text-white rounded px-3 py-2 duration-200"
+                    disabled={numPages === undefined || pageNumber === numPages}
+                 onClick={() => setPageNumber((prev) => prev +1 > numPages! ? numPages!: prev +1)}
+                 ><ChevronUp /></button>
               </div>
            </div>
         </div>
