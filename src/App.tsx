@@ -5,6 +5,7 @@ import Home from "./features/home/Home"
 import Login from "./features/login/Login"
 import UploadPaper from "./features/upload-paper/UploadPaper"
 import Register from "./features/registration/Register"
+import ViewPdf from "./features/pdf/ViewPdf"
 
 function App() {
  
@@ -15,7 +16,9 @@ function App() {
 
     <Route element={<Layout />}>
       <Route path="/home" element={<Home />} />
-      <Route path="/upload" element={<UploadPaper />} />
+        <Route path="/upload" element={<UploadPaper />} />
+      <Route path="/pdf/view" element={<ViewPdf />} />
+        
 
     </Route>
    </Routes>
