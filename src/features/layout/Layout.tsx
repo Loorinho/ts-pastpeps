@@ -6,13 +6,13 @@ const Layout = () => {
     <>
       {/* <NavBar /> */}
       {/* <div className="grid grid-cols-4"> */}
-        {/* <Sidebar /> */}
-        {/* <div className="col-span-3"> */}
-        <div className="">
-         <Header />
+      {/* <Sidebar /> */}
+      {/* <div className="col-span-3"> */}
+      <div className="">
+        <Header />
 
-          <Outlet />
-        </div>
+        <Outlet />
+      </div>
       {/* </div> */}
       {/* <Footer /> */}
     </>

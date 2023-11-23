@@ -1,17 +1,16 @@
-import { Document, Page, pdfjs } from "react-pdf"
+import { Document, Page, pdfjs } from "react-pdf";
 
-import File from "./sample.pdf"
+import File from "./sample.pdf";
 
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
 import { useResizeDetector } from "react-resize-detector";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.js',
-  import.meta.url,
+  "pdfjs-dist/build/pdf.worker.min.js",
+  import.meta.url
 ).toString();
 
 export default function ViewPdf() {
