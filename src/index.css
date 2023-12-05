@@ -11,3 +11,14 @@
   background-position: center;
   background-size: cover;
 }
+
+
+.login-form{
+  /* Sets the margin left and right on an element to auto so, the element is in the center */
+  margin-inline: auto; 
+
+  /* min-height: 300px; */
+  margin-top: 7rem;
+
+
+}

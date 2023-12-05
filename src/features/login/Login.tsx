@@ -17,10 +17,12 @@ function Login() {
     console.log("Data: ", data);
   };
   return (
-    <section className="h-[100dvh] flex justify-center items-center ">
+    // <section className="h-[100dvh] flex justify-center items-center ">
+    <section className="login_section">
+      
       <form
         onSubmit={handleSubmit(handleLogin)}
-        className="min-h-[300px] pt-7 pb-4 rounded-lg ring-1 ring-[#007791] w-[370px] px-2 "
+        className="login-form pt-7 pb-4 rounded-lg ring-1 ring-[#007791] w-[370px] px-2 "
       >
         {/* <div className="grid grid-cols-12 gap-2"> */}
 

@@ -1,4 +1,3 @@
-import axios from "axios";
 import { RegistrationSchema, RegistrationSchemaType } from "../zod/Schemas";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
