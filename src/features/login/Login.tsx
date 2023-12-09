@@ -3,10 +3,12 @@ import { LoginSchema, LoginSchemaType } from "../zod/Schemas";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "react-router-dom";
+import FormRow from "../../components/FormRow";
 
 function Login() {
   const {
     register,
+
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<LoginSchemaType>({
@@ -19,7 +21,7 @@ function Login() {
   return (
     // <section className="h-[100dvh] flex justify-center items-center ">
     <section className="login_section">
-      
+      {/* {console.log(errors)} */}
       <form
         onSubmit={handleSubmit(handleLogin)}
         className="login-form pt-7 pb-4 rounded-lg ring-1 ring-[#007791] w-[370px] px-2 "
@@ -31,6 +33,16 @@ function Login() {
         </p>
 
         <p className="my-3 text-xl text-center">Login to your account</p>
+
+        <FormRow>
+          <FormRow.Label>Email</FormRow.Label>
+          <FormRow.Input typeof="email" {...register("username")} />
+          {!!errors.username && (
+            <FormRow.Error>{errors.username.message}</FormRow.Error>
+          )}
+        </FormRow>
+
+        {/* 
         <div className="">
           <label htmlFor="" className="block text-gray-500 text-sm">
             Email
@@ -45,10 +57,11 @@ function Login() {
                 : " focus:ring-blue-700 "
             } `}
           />
+          
           {errors.username && (
             <span className="text-red-500 mb-2">{`${errors.username.message}`}</span>
           )}
-        </div>
+        </div> */}
         <div className="mt-2 relative">
           <label htmlFor="" className="block text-gray-500 text-sm">
             Password
