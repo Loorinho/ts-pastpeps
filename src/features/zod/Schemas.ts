@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const LoginSchema = z.object({
-  username: z.string().min(1, "Your email address is required"),
+  username: z.string().min(1, "Your email address is required").email(),
   //  .email()
   //  .refine(value => value.endsWith("@cit.mak.ac.ug") || value.endsWith("@mak.ac.ug"), {
   //    message: "Please enter a valid university email address"

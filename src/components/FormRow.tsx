@@ -13,21 +13,29 @@ FormRow.Error = Error;
 
 export default FormRow;
 
-function Label({ className, ...props }: HtmlHTMLAttributes<HTMLLabelElement>) {
+interface LabelProps extends React.HTMLAttributes<HTMLLabelElement> {}
+
+function Label({ className, ...props }: LabelProps) {
   return (
     <label
-      className={className + " block text-gray-500 text-sm "}
       {...props}
+      className={className + " block text-gray-500 text-sm "}
     ></label>
   );
 }
 
-function Input({ className, ...props }: HtmlHTMLAttributes<HTMLInputElement>) {
+interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
+  type: string;
+}
+
+function Input({ className, type, ...props }: InputProps) {
+  console.log("Input props: ", props);
   return (
     <input
+      type={type}
       className={
         className +
-        " border-2 rounded-md px-2 py-1 outline-none w-full focus:ring-1"
+        " border-2 rounded-md px-2 py-1 outline-none w-full focus:ring-[#007791] focus:ring-2"
       }
       {...props}
     ></input>

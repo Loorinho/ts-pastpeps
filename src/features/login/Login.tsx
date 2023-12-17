@@ -18,16 +18,15 @@ function Login() {
   const handleLogin = async (data: LoginSchemaType) => {
     console.log("Data: ", data);
   };
+
+  console.log("Errors: ", errors);
   return (
-    // <section className="h-[100dvh] flex justify-center items-center ">
-    <section className="login_section">
-      {/* {console.log(errors)} */}
+    <section className="flex justify-center items-center  h-[100dvh]">
+      {/* <section className="login_section" > */}
       <form
         onSubmit={handleSubmit(handleLogin)}
         className="login-form pt-7 pb-4 rounded-lg ring-1 ring-[#007791] w-[370px] px-2 "
       >
-        {/* <div className="grid grid-cols-12 gap-2"> */}
-
         <p className="text-center font-medium text-2xl mb-2">
           Past<span className="text-[#007791]">PEPS</span>
         </p>
@@ -36,7 +35,7 @@ function Login() {
 
         <FormRow>
           <FormRow.Label>Email</FormRow.Label>
-          <FormRow.Input typeof="email" {...register("username")} />
+          <FormRow.Input type="email" {...register("username")} />
           {!!errors.username && (
             <FormRow.Error>{errors.username.message}</FormRow.Error>
           )}
